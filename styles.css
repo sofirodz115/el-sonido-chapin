@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+
+:root {
+  --color-principal: #B05316;
+  --color-secundario: #F5EBDD;
+  --color-fondo: #FFF8F1;
+  --color-linea: #D8BFA5;
+  --color-texto: #3E2C23;
+  --borde: 12px;
+  --sombra: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  margin: 0;
+  padding: 0;
+}
+
+/* ENCABEZADO */
+header {
+  text-align: center;
+  padding: 40px 20px 25px;
+  border-bottom: 1px solid var(--color-linea);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--color-principal);
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #6B4C3B;
+  margin-top: 10px;
+}
+
+/* GALERÍA DE IMÁGENES - CARRUSEL HORIZONTAL PEQUEÑO */
+.imagenes-horizontal {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px; /* espacio entre imágenes */
+  padding: 20px 40px; /* espacio lateral visible (40px a cada lado) */
+  box-sizing: border-box;
+  scroll-padding: 40px; /* para que snap respete el padding */
+  max-width: 980px; /* ancho = 3 imágenes + 2 gaps + 2 espacios laterales */
+  margin: 0 auto; /* centrar el carrusel */
+}
+
+.imagenes-horizontal img {
+  scroll-snap-align: start;
+  flex: 0 0 calc((100% - 80px - 80px) / 3); 
+  /* 
+  100% ancho contenedor (980px)
+  - 80px total gaps (2 * 20px)
+  - 80px total padding lateral (2 * 40px)
+  dividido en 3 imágenes
+  */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  object-fit: cover;
+  max-height: 200px;
+}
+/* ENLACES */
+.enlaces {
+  text-align: center;
+  padding: 20px 10px;
+  background-color: transparent;
+  border-top: 1px solid var(--color-linea);
+  border-bottom: 1px solid var(--color-linea);
+  margin: 30px 0;
+}
+
+.enlaces a {
+  color: var(--color-principal);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 20px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.enlaces a:hover {
+  color: #8a3e12;
+}
+
+/* VIDEO */
+.video-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.video-container h2 {
+  color: var(--color-principal);
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.video-container iframe {
+  width: 90%;
+  max-width: 640px;
+  border-radius: var(--borde);
+  box-shadow: var(--sombra);
+}
+
+/* FORMULARIO */
+.formulario {
+  background-color: var(--color-secundario);
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 600px;
+  border-radius: var(--borde);
+  box-shadow: var(--sombra);
+  border: 1px solid var(--color-linea);
+}
+
+.formulario h2 {
+  color: var(--color-principal);
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+form {
+  display: grid;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #4C3B30;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: var(--borde);
+  font-size: 1rem;
+}
+
+
+footer {
+  text-align: center;
+  background-color: var(--color-fondo);
+  color: var(--color-principal);
+  padding: 20px;
+  font-size: 0.95rem;
+}
+button {
+  background-color: #9C4321; /* nuevo color para el botón */
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--borde);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #7b2f15; /* color más oscuro para hover */
+
+footer {
+  text-align: center !important;
+}
+}
